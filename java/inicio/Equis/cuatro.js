@@ -111,33 +111,25 @@ console.log(w)
 // Escribe una función llamada toCase que reciba como parámetro de entrada 
 //una cadena de texto y devuelva esa misma cadena de texto en minúsculas,
 // un guión medio y de nuevo esa misma cadena de texto en mayúsculas.
-const toCase = (txt) => {
-    return txt.toLowerCase() + "-" + txt.toUpperCase();
-}
+const toCase = (txt) => txt.toLowerCase() + "-" + txt.toUpperCase();
 const resuu = toCase("Luz")
 console.log(resuu)
 
 //Escribe una función llamada shortcut que tome dos cadenas de 
 //texto y devuelva la inicial de cada una de las dos cadenas.
-const shortcut = (y1, y2) => {
-    return y1[0] + y2[0]
-}
+const shortcut = (y1, y2) => y1[0] + y2[0];
 const alo = shortcut("ñoki", "bolígrafo")
 console.log(alo)
 
 //Escribe una función llamada firstChar, que devuelva la primera letra
 // que no sea un espacio cuando una cadena de texto es pasada.
-const firstChar = (s) => {
-    return s.trim()[0];
-}
+const firstChar = (s) => s.trim()[0];
 console.log(firstChar("  Mesalakala  "))
 
 // Escribe una función llamada indexOfIgnoreCase que reciba dos cadenas de texto y devuelva
 // la posición de la primera ocurrencia de la segunda cadena de texto en la primera. 
 //La función no debería tener en cuenta mayúsculas y minúsculas.
-const indexOfIgnoreCase = (h1, h2) => {
-    return h1.toLowerCase().indexOf(h2.toLowerCase())
-}
+const indexOfIgnoreCase = (h1, h2) => h1.toLowerCase().indexOf(h2.toLowerCase())
 const y = indexOfIgnoreCase("Marruecos", "ue")
 console.log(y)
 
@@ -151,3 +143,8 @@ const firstWord = (u1) => {
 }
 const x = firstWord("Daria con el retulador")
 console.log(x)
+
+const url = location.href;
+const res = url.substring(url.lastIndexOf("/"));
+console.log(res)
+
