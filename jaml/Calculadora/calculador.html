@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="num1" placeholder="n1">
+        <br>
+        <input type="text" id="num2" placeholder="n2">
+        <br>
+        <select id="ope">
+            <option value="suma">+</option>
+            <option value="resta">-</option>
+            <option value="multi">*</option>
+            <option value="divi">/</option>
+        </select>
+        <br>
+        <input type="button" id="btn" value="Calcular">
+        <output id="r"></output>
+    </form>
+    <script>
+        document.querySelector("#btn").addEventListener("click", () => {
+            const num1 = parseInt(document.querySelector("#num1").value);
+            const num2 = parseInt(document.querySelector("#num2").value);
+            const ope = document.querySelector("#ope").value;
+            let r;
+            if (ope == "suma") {
+                r = num1 + num2;
+            }
+            else if (ope == "resta") {
+                r = num1 - num2;
+            }
+            else if (ope == "multi") {
+                r = num1 * num2;
+            }
+            else if (ope == "divi") {
+                r = num1 / num2;
+            }
+            document.querySelector('#r').innerHTML = r;
+        });
+
+    </script>
+</body>
+
+</html>

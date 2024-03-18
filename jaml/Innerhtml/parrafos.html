@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="intro">
+    <div id="container"></div>
+    <script>
+        const frase = () => {
+            let resul = '';
+            const numIntro = Number(document.querySelector("#intro").value)
+            for (let i = 0; i < numIntro; i++) {
+                resul += "Daria "
+            }
+            document.querySelector("#container").innerHTML = resul
+        }
+        document.querySelector("#intro").addEventListener("input", frase)
+    </script>
+</body>
+
+</html>

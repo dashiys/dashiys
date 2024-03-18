@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        Grados centígrados
+        <input type="text" id="centi" value=" ">
+        <br>
+        Grados Farenheit
+        <input type="text" id="faren" value=" ">
+        <br>
+        <input type="button" id="btn" value="Calcular">
+        <input type="button" id="btnn" value="CalcularFar">
+    </form>
+
+
+    <script>
+        const calcular = () => {
+            const centig = document.querySelector("#centi").value
+            document.querySelector("#faren").value = centig * 9 / 5 + 32
+        }
+        document.querySelector('#btn').addEventListener('click', calcular);
+        const calcular2 = () => {
+            const farenig = document.querySelector("#faren").value - 32
+            document.querySelector("#centi").value = farenig * 5 / 9
+        }
+        document.querySelector('#btnn').addEventListener('click', calcular2);
+
+    </script>
+</body>
+
+
+
+</html>

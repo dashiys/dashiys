@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="numnoches"> Introduzca el número de noches:</label>
+        <input type="text" id="numnoches" placeholder="Número de noches">
+        <select id="idenpais">
+            <option value="Oviedo">Oviedo</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="madrid">Madrid</option>
+            <option value="barcelona">Barcelona</option>
+            <input type="button" id="btn" value="Calcular coste">
+            <br>
+            <br>
+            <label for="costehotel"> Coste hotel: </label>
+            <input type="text" id="costehotel">
+            <br>
+            <label for="costeviaje"> Coste viaje: </label>
+            <input type="text" id="costeviaje">
+            <br>
+            <label for="costecoche"> Coste alquile de coche: </label>
+            <input type="text" id="costecoche">
+            <br>
+            <label for="costetotal"> Coste total: </label>
+            <input type="text" id="costetotal">
+
+    </form>
+
+    <script>
+
+        const calculateHotelCost = (n) => {
+            return n * 140
+        }
+        const calculateAirplaneCost = (a) => {
+
+            let coste = 0
+            if (a == 'Oviedo')
+                coste = 15
+            else if (a == "Tokyo")
+                coste = 700
+            else if (a == "Madrid" || a == "Barcelona")
+                coste = 90
+
+            if (n > 3) coste *= 0.9;
+            return coste
+        }
+
+        const calculateCost = () => {
+            const numNights = document.querySelector("#numnoches").value;
+            const hotelCost = calculateHotelCost(numNights);
+            document.querySelector("#costehotel").value = hotelCost;
+
+            const vuelo = document.querySelector("#idenpais").value
+            const costeViaje = calculateAirplaneCost(vuelo);
+            document.querySelector("#costeviaje").value = costeViaje
+
+        }
+        document.querySelector('#btn').addEventListener('click', calculateCost);
+
+    </script>
+</body>
+
+
+
+</html>

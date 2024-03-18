@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="capa1" style="background-color: pink; width: 200px; height: 200px;"></div>
+    <div id="capa2" style="background-color: yellow; width: 200px; height: 200px"></div>
+    <script>
+        const paso = () => {
+            document.querySelector("#capa2").innerHTML = "Holaaaaaaaaa"
+        }
+        document.querySelector('#capa1').addEventListener('mouseover', paso)
+    </script>
+</body>
+
+</html>

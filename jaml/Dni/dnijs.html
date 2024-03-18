@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="sinum">Introduzca un dni sin la letra:</label>
+    <input type="text" id="sinum" placeholder="DNI sin la letra">
+    <br>
+    <br>
+    <label for="resul">La letra del DNI es:</label>
+    <input type="text" id="resul">
+    <br>
+    <br>
+    <input type="button" id="btn" value="Calcular">
+
+    <script>
+        const calcularDni = () => {
+            const numero = document.querySelector("#sinum").value
+            if (numero.length === 8) {
+                const resto = numero % 23;
+                const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+                const letra = letras.charAt(resto);
+                console.log(letra);
+                document.querySelector('#resul').value = letra;
+            }
+        }
+        document.querySelector("#btn").addEventListener("click", calcularDni)
+    </script>
+</body>
+
+</html>
