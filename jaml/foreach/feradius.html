@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <style>
+            table {
+                border: 1px solid black;
+            }
+
+            td {
+                border: 1px solid black;
+            }
+        </style>
+        <tr>
+            <td><input type="radio" name="uno"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="uno"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="uno"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+    </table>
+    <script>
+
+        document.querySelectorAll("tr").forEach(tr => {
+            tr.addEventListener("click", () => {
+                document.querySelectorAll("tr").forEach(tr2 => {
+                    tr2.querySelector("input").checked = false
+                    tr2.style.backgroundColor = "transparent"
+                })
+                tr.querySelector("input").checked = true
+                tr.style.backgroundColor = "pink"
+            })
+        })
+    </script>
+</body>
+
+</html>

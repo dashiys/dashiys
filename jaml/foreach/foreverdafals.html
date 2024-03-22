@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><input type="radio" name="primeros" value="uno">El cliente me suministra el diseño</p>
+    <br>
+    <p><input type="radio" name="primeros" value="dos" class="isright">Yo me encargo del diseño</p>
+    <br>
+    <br>
+    <p><input type="radio" name="segundos" value="tres" class="isright">La página no incorpora carrito de la compra</p>
+    <br>
+    <p><input type="radio" name="segundos" value="cuatro">La página incorpora un carrito de la compra</p>
+    <br>
+    <p><input type="radio" name="terceras" value="cinco" class="isright">La página no permite suscripción</p>
+    <br>
+    <p><input type="radio" name="terceras" value="seis">La página permite suscripción</p>
+    <br>
+    <br>
+    <input type="button" id="btn" value="Comprobar resultados">
+    <script>
+
+        const comprobar = () => {
+            document.querySelectorAll("[type=radio]:checked").forEach(input => {
+                console.log(input.value)
+                if (input.classList.contains('isright')) {
+                    console.log(11111)
+                    input.closest("p").style.backgroundColor = "green"
+                }
+                else {
+                    input.closest("p").style.backgroundColor = "red"
+                }
+            })
+        }
+        document.querySelector("#btn").addEventListener("click", comprobar)
+    </script>
+</body>
+
+</html>

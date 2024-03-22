@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./filtro.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="uls">
+        <li><a href="#">Todos</a></li>
+        <li><a href="#">Negro</a></li>
+        <li><a href="#">Amarillo</a></li>
+        <li><a href="#">Rosa</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="color negro"></div>
+        <div class="color amarillo"></div>
+        <div class="color amarillo"></div>
+        <div class="color rosa"></div>
+        <div class="color negro"></div>
+        <div class="color negro"></div>
+        <div class="color rosa"></div>
+        <div class="color amarillo"></div>
+        <div class="color negro"></div>
+        <div class="color amarillo"></div>
+        <div class="color amarillo"></div>
+        <div class="color rosa"></div>
+        <div class="color negro"></div>
+        <div class="color negro"></div>
+        <div class="color rosa"></div>
+        <div class="color amarillo"></div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".color").forEach(a => {
+            a.addEventListener("click", (a) => {
+                a.querySelector("Todos") =
+                    tr.style.backgroundColor = "pink"
+            })
+        })
+    </script>
+</body>
+
+</html>

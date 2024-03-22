@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <input type="button" id="btn" value="Botar">
+    <div id="recuadro" style="background-color: red; width: 200px; height: 200px;"></div>
+
+    <script>
+        document.querySelector("#btn").addEventListener("click", () => {
+            const rojo = document.querySelector("#recuadro")
+            rojo.classList.add('animate__animated', 'animate__bounce');
+            rojo.addEventListener('animationend', () => {
+                rojo.classList.remove('animate__animated', 'animate__bounce');
+            });
+        })
+    </script>
+
+</body>
+
+</html>

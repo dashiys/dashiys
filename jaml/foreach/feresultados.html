@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>¿Cuales de los siguientes lenguajes so ¡n orientados a objetos?: <span class="red">Java</span>, VB6 <span
+            class="red">C++</span>, C, <span class="red">C#</span>, Cobol ?</p>
+    <button> Ver soluciones</button>
+    <script>
+        const rojo = () => {
+            document.querySelectorAll('.red').forEach(rojo => {
+                rojo.style.backgroundColor = 'red';
+            });
+        }
+        document.querySelector("button").addEventListener("click", rojo)
+    </script>
+</body>
+
+</html>

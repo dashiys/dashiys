@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./hamburguesa.css">
+</head>
+
+<body>
+    <div class="pnl" id="pnl">
+        <div class="btn" id="btn"></div>
+    </div>
+
+    <script>
+        const boton = document.querySelector("#btn")
+        const panel = document.querySelector("#pnl")
+        boton.addEventListener("click", () => {
+            panel.classList.toggle("desplegable")
+        });
+        window.addEventListener('click', (e) => {
+            if (!panel.contains(e.target)) {
+                panel.classList.remove('desplegable');
+            }
+        });
+    </script>
+</body>
+
+</html>

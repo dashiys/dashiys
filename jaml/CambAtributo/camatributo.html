@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="triste.webp" id="sad" width="500px">
+    <script>
+        let foto1 = true
+        const cambiarImagen = () => {
+            foto1 = !foto1;
+            if (foto1) sad.setAttribute('src', "triste.webp");
+            else sad.setAttribute('src', "feliz.jpg");
+        }
+        document.querySelector('#sad').addEventListener('click', cambiarImagen);
+        // let i = 0
+        // i++
+        // if (i % 2 == 0) sad.setAttribute('src', "triste.webp");
+        // else sad.setAttribute('src', "feliz.jpg");
+    </script>
+
+</body>
+
+</html>

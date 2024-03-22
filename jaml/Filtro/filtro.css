@@ -1,0 +1,44 @@
+ul {
+    display: flex;
+}
+
+li {
+    margin: 10px;
+    list-style: none;
+}
+
+a {
+    color: black;
+}
+
+.container {
+    width: 1150px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.amarillo {
+    background-color: yellow;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+.negro {
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+.rosa {
+    background-color: pink;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+}
