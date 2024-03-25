@@ -18,21 +18,21 @@ a {
     margin: auto;
 }
 
-.amarillo {
+.yellow {
     background-color: yellow;
     width: 150px;
     height: 150px;
     margin: 20px;
 }
 
-.negro {
+.black {
     background-color: black;
     width: 150px;
     height: 150px;
     margin: 20px;
 }
 
-.rosa {
+.pink {
     background-color: pink;
     width: 150px;
     height: 150px;
@@ -41,4 +41,10 @@ a {
 
 a {
     text-decoration: none;
+}
+
+.invisible {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
