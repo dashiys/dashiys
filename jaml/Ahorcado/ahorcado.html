@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            margin: auto;
+            width: 75%;
+        }
+
+        .img {
+            width: 200px;
+            height: 212px;
+            background-image: url(./hangman.png);
+        }
+    </style>
+    <div class="container">
+        <h1>Juego del ahorcado con Javascript</h1>
+        <p class="palabraSecreta"></p>
+        <label for="letra">Introduzca una letra:</label>
+        <br>
+        <input type="text" id="letra">
+        <br>
+        <br>
+        <input type="button" id="btn" value="Verificar letra">
+        <div class="img"></div>
+    </div>
+
+
+    <script>
+
+        const words = ['casa', 'perros', 'coche', 'amor'];
+        const secretWord = words[Math.floor(Math.random() * words.length)];
+        let hiddenWord = secretWord.replace(/./g, "_ ");
+        alert(hiddenWord)
+        const replaceAt = (string, character, index) => {
+            return string.substring(0, index) + character + string.substring(index + character.length);
+        }
+        document.querySelector(".palabraSecreta").innerHTML = hiddenWord
+
+        let fallos = 0
+        const game = () => {
+
+            const letter = document.querySelector('input').value;
+            document.querySelector("input").value = ""
+            let hasAcertado = false
+            for (let i = 0; i < secretWord.length; i++) {
+                if (letter === secretWord[i]) {
+                    hiddenWord = replaceAt(hiddenWord, letter, i * 2);
+                    hasAcertado = true
+                }
+                document.querySelector(".palabraSecreta").innerHTML = hiddenWord
+            }
+            if (!hasAcertado) {
+                fallos++
+                document.querySelector(".img").style.backgroundPosition = -fallos * 200 + "px"
+                if (fallos == 4) {
+                    document.querySelector("body").innerHTML = "has perdido palet"
+                }
+            }
+            if (hiddenWord.indexOf("_") == -1) {
+                document.querySelector("body").innerHTML = "has ganado"
+            }
+        }
+        document.querySelector("#btn").addEventListener("click", game)
+    </script>
+</body>
+
+</html>

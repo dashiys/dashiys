@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            margin: auto;
+            width: 400px;
+        }
+
+        .desor {
+            border: 1px solid pink;
+            border-style: dashed;
+            padding: 20px 0px 20px 10px;
+            width: 400px;
+            text-align: left;
+        }
+
+        .orden {
+            border: 1px solid blue;
+            border-style: dashed;
+            margin-bottom: 20px;
+            width: 400px;
+            height: 40px;
+        }
+
+        span:hover {
+            background-color: lightpink;
+        }
+    </style>
+    <div class="container">
+        <div class="desor"></div>
+        <br>
+        <div class="orden"></div>
+        <br>
+        <input type="button" id="btn" value="Comprobar">
+    </div>
+    <script>
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (currentIndex != 0) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        const frases = ['la liebre es más rápida que la hormiga', 'la pizarra es más grande que la silla'];
+        const frase = frases[Math.floor(Math.random() * frases.length)];
+        palabra = frase.split(" ")
+        desordenadas = shuffle(palabra.map(p => "<span>" + p + "</span>")).join(" ")
+        document.querySelector(".desor").innerHTML = desordenadas
+
+        document.querySelectorAll(".desor span").forEach(o => {
+            o.addEventListener("click", () => {
+                document.querySelector(".orden").innerHTML += "<span>" + o.innerHTML + "</span> "
+                pulsacion()
+            })
+        })
+
+        const pulsacion = () => {
+            document.querySelectorAll(".orden span").forEach((o, i) => {
+                o.addEventListener("click", () => {
+                    const code = document.querySelector(".orden").innerHTML
+                    const codeArr = code.split(" ");
+                    codeArr.splice(i, 1)
+                    document.querySelector(".orden").innerHTML = codeArr.join(" ")
+                    pulsacion()
+                })
+            })
+        }
+        // const pulsación = () => {
+        //     desordenadas = 
+        // }
+
+        const btnPalabra = (e) => {
+            document.querySelector(".orden").innerHTML += e.target.innerHTML = " "
+        }
+
+    </script>
+</body>
+
+</html>
