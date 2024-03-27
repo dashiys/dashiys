@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="code"></div>
+    <style>
+        .code {
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px;
+            margin-left: 50px;
+        }
+    </style>
+    <script>
+        fetch('https://api.mercadolibre.com/sites/MLA/search?q=malabares')
+
+            .then(res => res.json())
+            .then(res => {
+                const code = res.results.map(data => '<h2>' + data.title + '</h2>' + "<img src=" + data.thumbnail + ">").join('')
+                document.querySelector('.code').innerHTML = code
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+
+</html>
+<!-- <div class="code"></div>
+
+<script>
+    fetch('https://swapi.py4e.com/api/people')
+
+        .then(res => res.json())
+        .then(res => {
+            console.log('11111111', res)
+            const code = res.results.map(character => '<h2>' + character.name + '</h2>').join('')
+
+            document.querySelector('.code').innerHTML = code
+        })
+        .catch(err => console.error(err));
+</script> -->
